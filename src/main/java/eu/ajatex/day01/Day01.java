@@ -23,9 +23,7 @@ public class Day01 {
         }
         if (sum > 0) sumOfCallories.add(sum);
         sumOfCallories.sort(Comparator.reverseOrder());
-        if (sumOfCallories.size() > 0) System.out.println(sumOfCallories.get(0).toString());
-        for (Integer sumOfSantaCallories : sumOfCallories) {
-            System.out.println(sumOfSantaCallories.toString());
-        }
+        Integer totalSum = sumOfCallories.stream().limit(3).reduce(0, Integer::sum);
+        if (sumOfCallories.size() > 0) System.out.println(sumOfCallories.get(0).toString() + " sum 3: " + totalSum);
     }
 }
